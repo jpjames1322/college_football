@@ -1,0 +1,8 @@
+<% @colleges.each do |college| %>
+  <div class="booyah-box col10 offset-1">
+    <h1><%= lint_to colleges.name, colleges_path(college) %>
+    </h1><br />
+    <i><%= college.team %></i><br />
+    <p><%= college.mascot %></p><br />
+    <% end %>
+  </div>

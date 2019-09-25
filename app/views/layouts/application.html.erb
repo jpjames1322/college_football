@@ -7,9 +7,47 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    </div>
   </head>
+   <body>
+<div id="flex-content-container">
+ <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Teams</a>
 
-  <body>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-md-0">
+        <li class="nav-item">
+      <%= link_to 'College teams', root_path, class: 'nav-link' %>
+      </li>
+    </ul>
+     <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Find</button>
+        </form>
+  </div>
+</nav>
+<div class="col-5 links">
+    <%= link_to 'Add Favorite Team', new_college_path %>
+    </div>
+    <% if flash[:error].present? %>
+      <div class="col-10 offset-1 alert alert-danger">
+      <%= flash[:error].html_safe %>
+      </div>
+    <% end %>
     <%= yield %>
+  </div>
+  <div id="footer">
+      <div class="container">
+        <b>Other Sports</b>
+        <br />
+        <b>Baseball</b>
+        <br />
+        <b>Basketball</b>
+        <%= link_to 'Link', 'root_path' %>
+      </div>
+    </div>
   </body>
 </html>
