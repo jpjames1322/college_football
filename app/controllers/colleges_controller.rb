@@ -11,7 +11,7 @@ class CollegesController < ApplicationController
   end
 
   def create
-    College.create(colleges_params)
+    College.create(college_params)
     if @colleges.invalid?
     flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
     end
@@ -19,7 +19,7 @@ class CollegesController < ApplicationController
   end
 
   private
-  
+
   def college_params
     params.require(:college).permit(:team, :mascot)
   end
