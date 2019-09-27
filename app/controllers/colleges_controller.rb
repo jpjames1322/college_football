@@ -4,6 +4,7 @@ class CollegesController < ApplicationController
   end
 
   def show
+    @colleges = College.find(params[:id])
   end
 
   def new
@@ -12,9 +13,6 @@ class CollegesController < ApplicationController
 
   def create
     College.create(college_params)
-    if @colleges.invalid?
-    flash[:error] = '<strong>Could not save</strong> the data you entered is invalid.'
-    end
     redirect_to root_path
   end
 

@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2019_09_22_205314) do
   create_table "colleges", force: :cascade do |t|
     t.string "team"
     t.string "mascot"
+    t.string "city"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
